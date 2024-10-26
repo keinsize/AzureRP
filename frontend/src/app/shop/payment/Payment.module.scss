@@ -1,0 +1,15 @@
+.payment_container {
+	@apply min-h-screen flex justify-center items-center pt-20 pb-40;
+
+	> .payment_content {
+		@apply max-w-[400px] bg-[#1F1F1F] p-10 rounded-3xl pt-20 relative overflow-hidden;
+
+		> .title {
+			@apply bg-green-600 absolute py-2 top-0 left-0 right-0 text-center  text-xl;
+		}
+
+		> .go_back {
+			@apply bg-orange font-medium py-3 rounded-md w-full mt-10;
+		}
+	}
+}

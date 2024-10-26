@@ -1,0 +1,37 @@
+.shop_container {
+	@apply min-h-screen pt-20 pb-40;
+
+	> .shop_content {
+		@apply max-w-[1000px] z-10 relative flex flex-col items-center gap-[50px];
+
+		> .header {
+			@apply flex justify-between w-full mt-[100px];
+
+			> .title {
+				@apply text-5xl font-medium max-w-[300px];
+			}
+		}
+
+		> .donate_container {
+			@apply bg-[#1F1F1F] p-[50px] rounded-3xl min-w-[400px];
+
+			> .title {
+				@apply text-center mb-[40px] text-lg;
+			}
+		}
+	}
+
+	> .background {
+		@apply absolute top-0 left-0 right-0 bottom-0;
+
+		> .lines {
+			@apply absolute top-0 left-0 w-full h-full mix-blend-overlay;
+			background: url(/backgrounds/bgLines.png) top/cover;
+		}
+
+		> .texture {
+			@apply w-full h-full mix-blend-multiply;
+			background: url(/backgrounds/bgTexture.png) center/100px repeat;
+		}
+	}
+}

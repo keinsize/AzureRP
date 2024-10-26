@@ -1,0 +1,142 @@
+.main {
+	> .start_game_container {
+		@apply min-h-screen pt-20;
+		background: url(/backgrounds/main_background.webp) center/cover no-repeat;
+		@media (max-width: 768px) {
+			@apply pt-40;
+		}
+
+		> .start_game_content {
+			@apply flex h-full justify-between max-w-[1140px] gap-12;
+			@media (max-width: 768px) {
+				@apply flex-col items-center;
+			}
+
+			> .information_container {
+				@apply flex items-start flex-col justify-center max-w-[440px] gap-[25px];
+				@media (max-width: 768px) {
+					@apply items-center;
+				}
+
+				> .azureonline {
+					@media (max-width: 1200px) {
+						@apply w-[330px];
+					}
+				}
+
+				> .information {
+					@apply text-xl;
+
+					@media (max-width: 1200px) {
+						@apply text-lg;
+					}
+
+					@media (max-width: 768px) {
+						@apply text-center;
+					}
+				}
+
+				> .start_button {
+					@apply px-14 py-6 rounded-md text-2xl;
+					@media (max-width: 1200px) {
+						@apply text-xl py-5 px-12;
+					}
+				}
+			}
+
+			> .policeman_container {
+				@apply flex items-end;
+
+				> .policeman {
+					@apply h-full w-full overflow-hidden;
+				}
+			}
+		}
+	}
+
+	> .choice_path_container {
+		@apply min-h-screen py-20;
+		background: url(/backgrounds/choice_path_background.png) top/100% no-repeat;
+
+		@media (max-width: 1380px) {
+			background-size: cover;
+		}
+
+		> .choice_path_content {
+			@apply flex flex-col justify-center items-center gap-[40px];
+
+			> .title {
+				@apply text-2xl font-medium;
+				@media (max-width: 768px) {
+					@apply text-xl;
+				}
+			}
+
+			> .cards {
+				@apply flex flex-wrap justify-around gap-10 mx-5;
+
+				> .card {
+					@apply w-[190px] h-[500px] rounded-lg relative saturate-0 overflow-hidden cursor-pointer;
+					background: center/cover no-repeat;
+					transition: filter 0.2s ease-in-out;
+
+					&:hover {
+						@apply saturate-100;
+
+						> .people {
+							@apply translate-y-0 scale-125;
+						}
+
+						> .info {
+							@apply opacity-100;
+						}
+					}
+
+					&::before {
+						@apply right-0 left-0 top-0 bottom-0 absolute opacity-[0.58];
+						background: linear-gradient(225deg, #1c03ff00, #003099);
+						content: '';
+					}
+
+					> .people {
+						@apply z-10 relative translate-y-3;
+						transition: transform 0.2s ease-in-out;
+					}
+
+					> .info {
+						@apply absolute bottom-10 z-10 text-center w-full	text-base uppercase	opacity-0;
+						transition: opacity 0.2s ease-in-out;
+
+						> div:last-child {
+							@apply font-bold;
+						}
+					}
+				}
+			}
+
+			.download {
+				@apply text-2xl font-medium px-16 py-6 rounded-md;
+				@media (max-width: 768px) {
+					@apply text-lg py-4 px-10;
+				}
+			}
+		}
+	}
+
+	> .features_container {
+		@apply pb-40;
+		> .features_content {
+			> .features {
+				@apply flex flex-wrap gap-10 justify-around max-w-[1100px] mx-auto gap-y-[100px];
+
+				> .feature {
+					@apply w-[300px] flex flex-col items-center gap-4;
+
+					> img {
+						@apply h-16;
+					}
+				}
+			}
+		}
+	}
+}

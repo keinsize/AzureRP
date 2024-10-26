@@ -1,0 +1,7 @@
+.form {
+	@apply flex flex-col gap-4;
+
+	> .pay_button {
+		@apply bg-orange font-medium p-4 rounded-md mt-5;
+	}
+}

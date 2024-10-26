@@ -1,0 +1,15 @@
+.field_container {
+	@apply w-full;
+
+	> .title {
+		@apply mb-2.5;
+	}
+
+	> .input_container {
+		@apply flex bg-[#2B2B2B] p-4 rounded-md;
+
+		input {
+			@apply outline-none bg-transparent text-white w-full m-0 px-0 placeholder:text-light-gray placeholder:text-base;
+		}
+	}
+}

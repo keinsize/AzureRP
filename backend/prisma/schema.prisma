@@ -1,0 +1,76 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Server {
+    id Int @id @default(autoincrement())
+      createdAt DateTime @default(now()) @map("created_at")
+
+      name String
+      color String
+      players Player[]
+
+      @@map("server")
+}
+
+model Player {
+  id Int @id @default(autoincrement())
+
+  nickname String @unique
+  password String
+
+  level Int @default(0)
+  vip Int @default(0)
+  money Int @default(0)
+  donate Int @default(0)
+  wanted Int @default(0)
+  skin Int @default(136)
+
+  house    House?
+  car      Car[]
+  business Business?  
+
+  server Server @relation(fields: [serverId], references: [id])
+  serverId Int @map("server_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt  @map("updated_at")
+
+  @@map("player")
+}
+
+model House {
+  id   Int    @id @default(autoincrement())
+  type String
+
+  owner   Player? @relation(fields: [ownerId], references: [id])
+  ownerId Int? @unique @map("owner_id")
+
+  @@map("house")
+}
+
+model Car {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  owner   Player? @relation(fields: [ownerId], references: [id])
+  ownerId Int? @map("owner_id")
+
+  @@map("car")
+}
+
+model Business {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  owner   Player? @relation(fields: [ownerId], references: [id])
+  ownerId Int? @unique @map("owner_id")
+
+  @@map("business")
+}

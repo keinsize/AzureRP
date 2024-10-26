@@ -1,0 +1,23 @@
+.footer {
+	@apply absolute left-0 bottom-0 right-0 flex justify-between items-center gap-5 h-[100px];
+
+	> .azure {
+		@apply flex items-center gap-3;
+
+		> .text {
+			@apply uppercase font-light min-w-[207px];
+		}
+	}
+
+	> .links {
+		@apply flex gap-5 flex-wrap justify-end text-end;
+
+		> .link {
+			@apply text-base font-extralight cursor-pointer;
+
+			&:hover {
+				@apply underline;
+			}
+		}
+	}
+}

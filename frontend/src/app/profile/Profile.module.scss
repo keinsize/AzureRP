@@ -1,0 +1,75 @@
+.profile_container {
+	@apply pb-40;
+
+	> .header_container {
+		@apply w-full h-[200px] mb-[50px];
+		background: linear-gradient(135deg, #ff7a2f 0%, #9f3b03 100%);
+
+		> .header {
+			@apply flex items-end h-full;
+			> .header_text {
+				@apply text-3xl font-medium mb-[40px] ml-[50px];
+			}
+		}
+	}
+
+	> .content_container {
+		@apply flex max-w-[1140px] gap-[100px] items-center;
+		@media (max-width: 640px) {
+			@apply flex-col-reverse;
+		}
+
+		> .skin_container {
+			@apply flex flex-col items-center;
+			flex: 1;
+
+			> .logout {
+				@apply text-sm bg-[#b9402b] py-2 px-4 rounded-md w-full mt-4;
+			}
+		}
+
+		> .information_container {
+			@apply flex flex-col w-full gap-10;
+			flex: 4;
+			@media (max-width: 640px) {
+				@apply items-center;
+			}
+
+			> .header {
+				@apply flex gap-4 items-center;
+
+				> .nickname {
+					@apply text-lg font-medium;
+				}
+
+				> .server {
+					@apply text-[12px] font-medium py-[3px] px-[15px] rounded-full uppercase;
+				}
+			}
+
+			.statistics_container {
+				@apply flex flex-col gap-10;
+
+				> .header {
+					@apply font-medium text-center;
+				}
+
+				> .statistics {
+					@apply flex flex-col gap-4;
+
+					> .item {
+						@apply flex justify-between items-center gap-10;
+
+						> .header {
+							@apply flex items-center gap-4;
+
+							> .icon {
+								@apply w-4 h-4;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

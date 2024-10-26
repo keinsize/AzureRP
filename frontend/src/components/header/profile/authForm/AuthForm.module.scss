@@ -1,0 +1,11 @@
+.form {
+	@apply flex flex-col gap-5 items-center p-5;
+
+	> .captcha {
+		@apply my-5;
+	}
+
+	> .login_button {
+		@apply bg-orange font-medium px-10 p-5 rounded-md;
+	}
+}

@@ -1,0 +1,58 @@
+.account {
+	> .account_link {
+		@apply bg-white py-2 px-5 rounded-md text-black;
+		@media (max-width: 768px) {
+			@apply text-lg;
+		}
+	}
+}
+
+.profile {
+	@apply flex gap-4 items-center;
+	@media (max-width: 768px) {
+		@apply bg-[#fff] py-1 px-3 rounded-md;
+	}
+
+	> .nickname {
+		@apply leading-4 font-medium;
+		@media (max-width: 768px) {
+			@apply text-black;
+		}
+	}
+
+	> .image_container {
+		@apply w-8 h-8 overflow-hidden rounded-full;
+
+		> img {
+			@apply object-cover object-top;
+		}
+	}
+}
+
+.auth_modal_container {
+	@apply bg-[#1F1F1F] rounded-2xl relative my-5 p-[50px];
+	max-height: calc(100vh - 40px);
+	@media (max-width: 640px) {
+		@apply fixed right-0 left-0 bottom-0 top-0 m-0 max-h-none rounded-none;
+	}
+
+	> .close_button {
+		@apply w-5 h-5 rotate-45 absolute right-5 top-5 cursor-pointer;
+		background: url(/icons/plus.svg) center/contain no-repeat;
+		@media (max-width: 640px) {
+			@apply hidden;
+		}
+	}
+
+	> .auth_modal_content {
+		@apply flex flex-col gap-10 overflow-auto;
+		max-height: calc(100vh - 140px);
+		@media (max-width: 640px) {
+			max-height: calc(100vh - 100px);
+		}
+
+		> .title {
+			@apply text-center font-medium text-xl leading-5;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+.burger_container {
+	@apply flex items-center h-full justify-end;
+
+	> .burger {
+		@apply hidden max-md:block h-5;
+
+		> .button_container {
+			@apply h-full w-[30px] cursor-pointer flex;
+
+			> .menu_button,
+			.menu_button::before,
+			.menu_button::after {
+				@apply block bg-white absolute h-1 rounded-sm w-[30px];
+				transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+			}
+
+			> .menu_button {
+				@apply my-2;
+
+				&::before {
+					content: '';
+					margin-top: -8px;
+				}
+
+				&::after {
+					content: '';
+					margin-top: 8px;
+				}
+			}
+		}
+
+		> .menu_toggle {
+			display: none;
+
+			&:checked + .button_container {
+				> .menu_button {
+					@apply bg-transparent;
+
+					&::before {
+						margin-top: 0px;
+						transform: rotate(-405deg);
+					}
+
+					&::after {
+						margin-top: 0px;
+						transform: rotate(405deg);
+					}
+				}
+			}
+		}
+	}
+}

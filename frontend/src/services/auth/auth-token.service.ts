@@ -19,5 +19,9 @@ export const saveTokenStorage = (accessToken: string) => {
 }
 
 export const removeFromStorage = () => {
-	Cookies.remove(EnumTokens.ACCESS_TOKEN)
+	Cookies.set(EnumTokens.ACCESS_TOKEN, '', {
+		domain: 'azure-rp.vercel.app',
+		sameSite: 'strict',
+		expires: 0
+	})
 }

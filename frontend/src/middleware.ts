@@ -4,9 +4,9 @@ import { EnumTokens } from './services/auth/auth-token.service'
 
 export async function middleware(request: NextRequest, response: NextResponse) {
 	const { url, cookies } = request
-	const refreshToken = cookies.get(EnumTokens.REFRESH_TOKEN)?.value
+	const accessToken = cookies.get(EnumTokens.ACCESS_TOKEN)?.value
 
-	if (!refreshToken) {
+	if (!accessToken) {
 		return NextResponse.redirect(new URL('/', request.url))
 	}
 

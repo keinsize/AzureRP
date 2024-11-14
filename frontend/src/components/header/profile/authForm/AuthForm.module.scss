@@ -1,5 +1,5 @@
 .form {
-	@apply flex flex-col gap-5 items-center p-5;
+	@apply flex flex-col gap-5 items-center p-5 min-w-[340px];
 
 	> .captcha {
 		@apply my-5;

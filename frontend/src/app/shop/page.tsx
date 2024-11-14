@@ -8,6 +8,11 @@ import { DonateForm } from './donateForm/DonateForm'
 export default function ShopPage() {
 	return (
 		<div className={styles.shop_container}>
+			<div className={styles.background}>
+				<div className={styles.lines} />
+				<div className={styles.texture} />
+			</div>
+			
 			<div className={cn(styles.shop_content, 'fixed-size')}>
 				<div className={styles.header}>
 					<div className={styles.title}>Пополнение баланса аккаунта</div>
@@ -25,11 +30,6 @@ export default function ShopPage() {
 					<div className={styles.title}>Заполните данные</div>
 					<DonateForm />
 				</div>
-			</div>
-
-			<div className={styles.background}>
-				<div className={styles.lines} />
-				<div className={styles.texture} />
 			</div>
 		</div>
 	)

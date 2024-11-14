@@ -13,7 +13,6 @@ function Payment() {
 	const params = useSearchParams()
 	const { back } = useRouter()
 
-	useEffect(() => {
 		if (params.get('email'))
 			sendEmail(
 				params.get('email')!,
@@ -54,7 +53,7 @@ function Payment() {
 			</div>
 		</div>`
 			)
-	}, [])
+
 
 	return (
 		<div className={styles.payment_container}>

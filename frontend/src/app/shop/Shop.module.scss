@@ -2,7 +2,7 @@
 	@apply min-h-screen pt-20 pb-40;
 
 	> .shop_content {
-		@apply max-w-[1000px] z-10 relative flex flex-col items-center gap-[50px];
+		@apply max-w-[1000px] relative flex flex-col items-center gap-[50px];
 
 		> .header {
 			@apply flex justify-between w-full mt-[100px];

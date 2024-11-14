@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 import Modal from '@/components/modal/Modal'
 
@@ -34,7 +35,24 @@ export function Profile() {
 	) : (
 		<div className={styles.account}>
 			<button
-				onClick={() => authModal.setOpen(true)}
+				onClick={() => {
+					authModal.setOpen(true)
+					toast.info(
+		<p className='whitespace-pre-wrap ml-4 mr-2 cursor-text'>
+			{
+				'Тестовые данные для входа в аккаунт:\nНикнейм: Mark_Keinsize\nПароль: 12345678'
+			}
+		</p>,
+		{
+			autoClose: 10000,
+			hideProgressBar: false,
+			closeOnClick: false,
+			draggable: false,
+			toastId: 'greeting'
+		}
+	)
+				     }
+				}
 				className={styles.account_link}
 			>
 				Личный кабинет

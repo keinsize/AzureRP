@@ -2,14 +2,14 @@
 
 // Допустим что это страница успешного платежа
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 
 import { formatToCurrency } from '@/utils/format-to-currency'
 import { sendEmail } from '@/utils/send-email'
 
 import styles from './Payment.module.scss'
 
-export default function Payment() {
+function Payment() {
 	const params = useSearchParams()
 	const { back } = useRouter()
 
@@ -77,5 +77,13 @@ export default function Payment() {
 				</button>
 			</div>
 		</div>
+	)
+}
+
+export default function PaymentSuspense() {
+	return (
+		<Suspense>
+			<Payment />
+		</Suspense>
 	)
 }
